@@ -4,6 +4,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import firebase from './firebase';
+import Signup from './component/Signup/Signup'
 
 export class App extends Component {
   handleClick=()=>{
@@ -28,6 +29,8 @@ export class App extends Component {
           <label></label>
           <div id="recaptcha"></div>
           <button onClick = {this.handleClick}>Click here</button>
+   
+        <Signup/>
     </div>
    
     )
