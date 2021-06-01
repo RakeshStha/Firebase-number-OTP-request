@@ -1,10 +1,9 @@
 
-
-
 import React, { Component } from 'react'
 import './App.css';
 import firebase from './firebase';
-import Signup from './component/Signup/Signup'
+import { Card, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export class App extends Component {
   handleClick=()=>{
@@ -25,13 +24,29 @@ export class App extends Component {
     
     return (
    
-      <div className="App">
-          <label></label>
-          <div id="recaptcha"></div>
-          <button onClick = {this.handleClick}>Click here</button>
-   
-        <Signup/>
-    </div>
+      <div className="d-flex justify-content-center">
+                 <Card className="card ">
+                    <Form inline>
+                        <h1 className="text-center">Signup</h1>
+                        <FormGroup>
+                            <Label for="name" hidden>Full Name</Label>
+                            <Input type="text" name="name" id="Name" placeholder="Full Name" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="Email" hidden>Email</Label>
+                            <Input type="email" name="email" id="Email" placeholder="Email" />
+                        </FormGroup>
+                        {' '}
+                        <FormGroup>
+                            <Label for="Password" hidden>Password</Label>
+                            <Input type="password" name="password" id="Password" placeholder="Password" />
+                        </FormGroup>
+                        {' '}
+                        <div id="recaptcha"></div>
+                        <Button className="btns" onClick = {this.handleClick}>Submit</Button>
+                        </Form>
+                    </Card>
+            </div>
    
     )
   }
